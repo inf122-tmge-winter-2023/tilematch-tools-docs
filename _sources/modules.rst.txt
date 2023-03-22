@@ -1,7 +1,0 @@
-tilematch_tools
-===============
-
-.. toctree::
-   :maxdepth: 4
-
-   tilematch_tools
