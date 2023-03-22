@@ -1,0 +1,61 @@
+tilematch\_tools.core package
+=============================
+
+Submodules
+----------
+
+tilematch\_tools.core.board\_factory module
+-------------------------------------------
+
+.. automodule:: tilematch_tools.core.board_factory
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tilematch\_tools.core.exceptions module
+---------------------------------------
+
+.. automodule:: tilematch_tools.core.exceptions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tilematch\_tools.core.game\_engine module
+-----------------------------------------
+
+.. automodule:: tilematch_tools.core.game_engine
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tilematch\_tools.core.game\_loop module
+---------------------------------------
+
+.. automodule:: tilematch_tools.core.game_loop
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tilematch\_tools.core.game\_state module
+----------------------------------------
+
+.. automodule:: tilematch_tools.core.game_state
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tilematch\_tools.core.tile\_builder module
+------------------------------------------
+
+.. automodule:: tilematch_tools.core.tile_builder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: tilematch_tools.core
+   :members:
+   :undoc-members:
+   :show-inheritance:

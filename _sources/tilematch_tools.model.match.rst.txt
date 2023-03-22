@@ -1,0 +1,10 @@
+tilematch\_tools.model.match package
+====================================
+
+Module contents
+---------------
+
+.. automodule:: tilematch_tools.model.match
+   :members:
+   :undoc-members:
+   :show-inheritance:

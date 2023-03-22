@@ -1,0 +1,10 @@
+tilematch\_tools.model.score package
+====================================
+
+Module contents
+---------------
+
+.. automodule:: tilematch_tools.model.score
+   :members:
+   :undoc-members:
+   :show-inheritance:

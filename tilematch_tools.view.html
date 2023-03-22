@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>tilematch_tools.view package &#8212; tilematch_tools 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="tilematch_tools.model.tiles package" href="tilematch_tools.model.tiles.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="tilematch-tools-view-package">
+<h1>tilematch_tools.view package<a class="headerlink" href="#tilematch-tools-view-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-tilematch_tools.view.board_view">
+<span id="tilematch-tools-view-board-view-module"></span><h2>tilematch_tools.view.board_view module<a class="headerlink" href="#module-tilematch_tools.view.board_view" title="Permalink to this heading">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">module_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>board_view</p>
+</dd>
+<dt class="field-even">module_summary<span class="colon">:</span></dt>
+<dd class="field-even"><p>GUI widget for displaying a tilematching game board</p>
+</dd>
+<dt class="field-odd">module_author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nathan Mendoza (<a class="reference external" href="mailto:nathancm&#37;&#52;&#48;uci&#46;edu">nathancm<span>&#64;</span>uci<span>&#46;</span>edu</a>)</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoardView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.view.board_view.</span></span><span class="sig-name descname"><span class="pre">BoardView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">board_to_watch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="tilematch_tools.model.board.html#tilematch_tools.model.board.game_board.GameBoard" title="tilematch_tools.model.board.game_board.GameBoard"><span class="pre">GameBoard</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/board_view.html#BoardView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.board_view.BoardView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tilematch_tools.view.game_widgets.GameInfo" title="tilematch_tools.view.game_widgets.GameInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">GameInfo</span></code></a></p>
+<p>GUI widget for displaying a tilematching game board</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoardView.bbox_for_tile">
+<span class="sig-name descname"><span class="pre">bbox_for_tile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/board_view.html#BoardView.bbox_for_tile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.board_view.BoardView.bbox_for_tile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoardView.board_height">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">board_height</span></span><a class="headerlink" href="#tilematch_tools.view.board_view.BoardView.board_height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoardView.board_width">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">board_width</span></span><a class="headerlink" href="#tilematch_tools.view.board_view.BoardView.board_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoardView.create_widgets">
+<span class="sig-name descname"><span class="pre">create_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/board_view.html#BoardView.create_widgets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.board_view.BoardView.create_widgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>A place to initialize any necessary internal widgets</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoardView.place_widgets">
+<span class="sig-name descname"><span class="pre">place_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/board_view.html#BoardView.place_widgets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.board_view.BoardView.place_widgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>A place to organize internal widgets into self</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoardView.tile_side_length">
+<span class="sig-name descname"><span class="pre">tile_side_length</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#tilematch_tools.view.board_view.BoardView.tile_side_length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoardView.tiles_map">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tiles_map</span></span><a class="headerlink" href="#tilematch_tools.view.board_view.BoardView.tiles_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoardView.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/board_view.html#BoardView.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.board_view.BoardView.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Describes how the widget should update itself</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoardView.watching">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">watching</span></span><a class="headerlink" href="#tilematch_tools.view.board_view.BoardView.watching" title="Permalink to this definition">¶</a></dt>
+<dd><p>A getter for the value this widget is watching for changes</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoundingBox">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.view.board_view.</span></span><span class="sig-name descname"><span class="pre">BoundingBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/board_view.html#BoundingBox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.board_view.BoundingBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoundingBox.end_x">
+<span class="sig-name descname"><span class="pre">end_x</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#tilematch_tools.view.board_view.BoundingBox.end_x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoundingBox.end_y">
+<span class="sig-name descname"><span class="pre">end_y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#tilematch_tools.view.board_view.BoundingBox.end_y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoundingBox.start_x">
+<span class="sig-name descname"><span class="pre">start_x</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#tilematch_tools.view.board_view.BoundingBox.start_x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoundingBox.start_y">
+<span class="sig-name descname"><span class="pre">start_y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#tilematch_tools.view.board_view.BoundingBox.start_y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-tilematch_tools.view.game_view">
+<span id="tilematch-tools-view-game-view-module"></span><h2>tilematch_tools.view.game_view module<a class="headerlink" href="#module-tilematch_tools.view.game_view" title="Permalink to this heading">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">module_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>game_view</p>
+</dd>
+<dt class="field-even">module_summary<span class="colon">:</span></dt>
+<dd class="field-even"><p>GUI widget for displaying a game’s widgets</p>
+</dd>
+<dt class="field-odd">module_author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nathan Mendoza (<a class="reference external" href="mailto:nathancm&#37;&#52;&#48;uci&#46;edu">nathancm<span>&#64;</span>uci<span>&#46;</span>edu</a>)</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_view.GameView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.view.game_view.</span></span><span class="sig-name descname"><span class="pre">GameView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_to_watch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="tilematch_tools.core.html#tilematch_tools.core.game_state.GameState" title="tilematch_tools.core.game_state.GameState"><span class="pre">GameState</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/game_view.html#GameView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.game_view.GameView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tilematch_tools.view.game_widgets.GameWidget" title="tilematch_tools.view.game_widgets.GameWidget"><code class="xref py py-class docutils literal notranslate"><span class="pre">GameWidget</span></code></a></p>
+<p>GUI widget for displaying a game’s widgets</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_view.GameView.create_widgets">
+<span class="sig-name descname"><span class="pre">create_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/game_view.html#GameView.create_widgets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.game_view.GameView.create_widgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>A place to initialize any necessary internal widgets</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_view.GameView.place_widgets">
+<span class="sig-name descname"><span class="pre">place_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/game_view.html#GameView.place_widgets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.game_view.GameView.place_widgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>A place to organize internal widgets into self</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_view.GameView.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/game_view.html#GameView.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.game_view.GameView.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Describes how the widget should update itself</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-tilematch_tools.view.game_widgets">
+<span id="tilematch-tools-view-game-widgets-module"></span><h2>tilematch_tools.view.game_widgets module<a class="headerlink" href="#module-tilematch_tools.view.game_widgets" title="Permalink to this heading">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">module_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>game_widgets</p>
+</dd>
+<dt class="field-even">module_summary<span class="colon">:</span></dt>
+<dd class="field-even"><p>abstract classes representing generalized game widgets</p>
+</dd>
+<dt class="field-odd">module_author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nathan Mendoza (<a class="reference external" href="mailto:nathancm&#37;&#52;&#48;uci&#46;edu">nathancm<span>&#64;</span>uci<span>&#46;</span>edu</a>)</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_widgets.GameInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.view.game_widgets.</span></span><span class="sig-name descname"><span class="pre">GameInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/game_widgets.html#GameInfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.game_widgets.GameInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tilematch_tools.view.game_widgets.GameWidget" title="tilematch_tools.view.game_widgets.GameWidget"><code class="xref py py-class docutils literal notranslate"><span class="pre">GameWidget</span></code></a></p>
+<p>A base widget for displaying key: value game information</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_widgets.GameInfo.font">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">font</span></span><a class="headerlink" href="#tilematch_tools.view.game_widgets.GameInfo.font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Font to use in display</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_widgets.GameInfo.showing">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">showing</span></span><a class="headerlink" href="#tilematch_tools.view.game_widgets.GameInfo.showing" title="Permalink to this definition">¶</a></dt>
+<dd><p>A getter for the value ths widget is currently displaying</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_widgets.GameInfo.watching">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">watching</span></span><a class="headerlink" href="#tilematch_tools.view.game_widgets.GameInfo.watching" title="Permalink to this definition">¶</a></dt>
+<dd><p>A getter for the value this widget is watching for changes</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_widgets.GameWidget">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.view.game_widgets.</span></span><span class="sig-name descname"><span class="pre">GameWidget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/game_widgets.html#GameWidget"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.game_widgets.GameWidget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code></p>
+<p>A base widget class for tilematching games</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_widgets.GameWidget.create_widgets">
+<span class="sig-name descname"><span class="pre">create_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/game_widgets.html#GameWidget.create_widgets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.game_widgets.GameWidget.create_widgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>A place to initialize any necessary internal widgets</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_widgets.GameWidget.place_widgets">
+<span class="sig-name descname"><span class="pre">place_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/game_widgets.html#GameWidget.place_widgets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.game_widgets.GameWidget.place_widgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>A place to organize internal widgets into self</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_widgets.GameWidget.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/game_widgets.html#GameWidget.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.game_widgets.GameWidget.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Describes how the widget should update itself</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-tilematch_tools.view.score_view">
+<span id="tilematch-tools-view-score-view-module"></span><h2>tilematch_tools.view.score_view module<a class="headerlink" href="#module-tilematch_tools.view.score_view" title="Permalink to this heading">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">module_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>score_view</p>
+</dd>
+<dt class="field-even">module_summary<span class="colon">:</span></dt>
+<dd class="field-even"><p>GUI widget for displaying a game score</p>
+</dd>
+<dt class="field-odd">module_author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nathan Mendoza (<a class="reference external" href="mailto:nathancm&#37;&#52;&#48;uci&#46;edu">nathancm<span>&#64;</span>uci<span>&#46;</span>edu</a>)</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.view.score_view.ScoreView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.view.score_view.</span></span><span class="sig-name descname"><span class="pre">ScoreView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_to_watch</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/score_view.html#ScoreView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.score_view.ScoreView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tilematch_tools.view.game_widgets.GameInfo" title="tilematch_tools.view.game_widgets.GameInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">GameInfo</span></code></a></p>
+<p>GUI widget for displaying a game score
+:arg parent: GUI widget
+:arg score_to_watch: score to update this widget
+:arg <a href="#id1"><span class="problematic" id="id2">**</span></a>oprtions: configuration</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.score_view.ScoreView.create_widgets">
+<span class="sig-name descname"><span class="pre">create_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/score_view.html#ScoreView.create_widgets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.score_view.ScoreView.create_widgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>A place to initialize any necessary internal widgets</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.score_view.ScoreView.place_widgets">
+<span class="sig-name descname"><span class="pre">place_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/score_view.html#ScoreView.place_widgets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.score_view.ScoreView.place_widgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>A place to organize internal widgets into self</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.score_view.ScoreView.showing">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">showing</span></span><a class="headerlink" href="#tilematch_tools.view.score_view.ScoreView.showing" title="Permalink to this definition">¶</a></dt>
+<dd><p>A getter for the value ths widget is currently displaying</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.score_view.ScoreView.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/view/score_view.html#ScoreView.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.view.score_view.ScoreView.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Describes how the widget should update itself</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.score_view.ScoreView.watching">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">watching</span></span><a class="headerlink" href="#tilematch_tools.view.score_view.ScoreView.watching" title="Permalink to this definition">¶</a></dt>
+<dd><p>A getter for the value this widget is watching for changes</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-tilematch_tools.view">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tilematch_tools.view" title="Permalink to this heading">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">module_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>view</p>
+</dd>
+<dt class="field-even">module_summary<span class="colon">:</span></dt>
+<dd class="field-even"><p>a module responsible for the view of the tile game</p>
+</dd>
+<dt class="field-odd">module_author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Matthew Isayan</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tilematch_tools</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="tilematch_tools.html">tilematch_tools package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tilematch_tools.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tilematch_tools.core.html">tilematch_tools.core package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tilematch_tools.model.html">tilematch_tools.model package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">tilematch_tools.view package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tilematch_tools.view.board_view">tilematch_tools.view.board_view module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tilematch_tools.view.game_view">tilematch_tools.view.game_view module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tilematch_tools.view.game_widgets">tilematch_tools.view.game_widgets module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tilematch_tools.view.score_view">tilematch_tools.view.score_view module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tilematch_tools.view">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tilematch_tools.html#module-tilematch_tools">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="tilematch_tools.html">tilematch_tools package</a><ul>
+      <li>Previous: <a href="tilematch_tools.model.tiles.html" title="previous chapter">tilematch_tools.model.tiles package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Group 15.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/tilematch_tools.view.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>tilematch_tools.model.score package &#8212; tilematch_tools 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tilematch_tools.model.tiles package" href="tilematch_tools.model.tiles.html" />
+    <link rel="prev" title="tilematch_tools.model.movement package" href="tilematch_tools.model.movement.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="tilematch-tools-model-score-package">
+<h1>tilematch_tools.model.score package<a class="headerlink" href="#tilematch-tools-model-score-package" title="Permalink to this heading">¶</a></h1>
+<section id="module-tilematch_tools.model.score">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tilematch_tools.model.score" title="Permalink to this heading">¶</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">module_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>score</p>
+</dd>
+<dt class="field-even">module_summary<span class="colon">:</span></dt>
+<dd class="field-even"><p>a class the can represent the score of a tile-matching game</p>
+</dd>
+<dt class="field-odd">module_author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nathan Mendoza (<a class="reference external" href="mailto:nathancm&#37;&#52;&#48;uci&#46;edu">nathancm<span>&#64;</span>uci<span>&#46;</span>edu</a>)</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.model.score.Scoring">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.model.score.</span></span><span class="sig-name descname"><span class="pre">Scoring</span></span><a class="reference internal" href="_modules/tilematch_tools/model/score.html#Scoring"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.model.score.Scoring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>a class that tracks the score of a game</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.model.score.Scoring.award_for_match">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">award_for_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="tilematch_tools.model.match.html#tilematch_tools.model.match.MatchCondition.MatchFound" title="tilematch_tools.model.match.MatchCondition.MatchFound"><span class="pre">MatchFound</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/tilematch_tools/model/score.html#Scoring.award_for_match"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.model.score.Scoring.award_for_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>award the points specified by a given match condition to the score
+:arg match: the match condition awarding points
+:arg type: MatchFound
+:returns: nothing
+:rtype: None</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.model.score.Scoring.multiplier">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">multiplier</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#tilematch_tools.model.score.Scoring.multiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p>read only view of score multiplier
+:returns: current score multiplier
+:rtype: int</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.model.score.Scoring.score">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">score</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#tilematch_tools.model.score.Scoring.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>read only view of current score
+:returns: snapshot of score value
+:rtype: int</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tilematch_tools</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="tilematch_tools.html">tilematch_tools package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tilematch_tools.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tilematch_tools.core.html">tilematch_tools.core package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="tilematch_tools.model.html">tilematch_tools.model package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="tilematch_tools.model.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tilematch_tools.model.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tilematch_tools.model.html#module-tilematch_tools.model.exceptions">tilematch_tools.model.exceptions module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tilematch_tools.model.html#module-tilematch_tools.model">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tilematch_tools.view.html">tilematch_tools.view package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tilematch_tools.html#module-tilematch_tools">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="tilematch_tools.html">tilematch_tools package</a><ul>
+  <li><a href="tilematch_tools.model.html">tilematch_tools.model package</a><ul>
+      <li>Previous: <a href="tilematch_tools.model.movement.html" title="previous chapter">tilematch_tools.model.movement package</a></li>
+      <li>Next: <a href="tilematch_tools.model.tiles.html" title="next chapter">tilematch_tools.model.tiles package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Group 15.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/tilematch_tools.model.score.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
