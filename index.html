@@ -158,13 +158,55 @@
 <span id="tilematch-tools-core-game-engine-module"></span><h5>tilematch_tools.core.game_engine module<a class="headerlink" href="#module-tilematch_tools.core.game_engine" title="Permalink to this heading"></a></h5>
 <dl class="py class">
 <dt class="sig sig-object py" id="tilematch_tools.core.game_engine.GameEngine">
-<em class="property"><span class="pre">class</span><span class="w">  </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.core.game_engine.</span></span><span class="sig-name descname"><span class="pre">GameEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_loops</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="index.html#tilematch_tools.core.game_loop.GameLoop" title="tilematch_tools.core.game_loop.GameLoop"><span class="pre">GameLoop</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.core.game_engine.GameEngine" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w">  </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.core.game_engine.</span></span><span class="sig-name descname"><span class="pre">GameEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">games</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="index.html#tilematch_tools.core.game_factory.Game" title="tilematch_tools.core.game_factory.Game"><span class="pre">Game</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.core.game_engine.GameEngine" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.core.game_engine.GameEngine.REFRESH_LATENCY">
+<span class="sig-name descname"><span class="pre">REFRESH_LATENCY</span></span><em class="property"><span class="w">  </span><span class="p"><span class="pre">=</span></span><span class="w">  </span><span class="pre">100</span></em><a class="headerlink" href="#tilematch_tools.core.game_engine.GameEngine.REFRESH_LATENCY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="tilematch_tools.core.game_engine.GameEngine.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#tilematch_tools.core.game_engine.GameEngine.run" title="Permalink to this definition"></a></dt>
-<dd><p>Executes game engine
-Runs on main thread</p>
+<dd><p>Executes game engine</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.core.game_engine.GameEngine.update_games">
+<span class="sig-name descname"><span class="pre">update_games</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#tilematch_tools.core.game_engine.GameEngine.update_games" title="Permalink to this definition"></a></dt>
+<dd><p>Update all the games</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-tilematch_tools.core.game_factory">
+<span id="tilematch-tools-core-game-factory-module"></span><h5>tilematch_tools.core.game_factory module<a class="headerlink" href="#module-tilematch_tools.core.game_factory" title="Permalink to this heading"></a></h5>
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.core.game_factory.Game">
+<em class="property"><span class="pre">class</span><span class="w">  </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.core.game_factory.</span></span><span class="sig-name descname"><span class="pre">Game</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><a class="reference internal" href="index.html#tilematch_tools.core.game_state.GameState" title="tilematch_tools.core.game_state.GameState"><span class="pre">GameState</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">loop_class</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="index.html#tilematch_tools.core.game_loop.GameLoop" title="tilematch_tools.core.game_loop.GameLoop"><span class="pre">GameLoop</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view_class</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="index.html#tilematch_tools.view.game_view.GameView" title="tilematch_tools.view.game_view.GameView"><span class="pre">GameView</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tick_speed</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.core.game_factory.Game" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.core.game_factory.Game.setup">
+<span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.core.game_factory.Game.setup" title="Permalink to this definition"></a></dt>
+<dd><p>Initial setup of a game and should be called after creation.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.core.game_factory.GameFactory">
+<em class="property"><span class="pre">class</span><span class="w">  </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.core.game_factory.</span></span><span class="sig-name descname"><span class="pre">GameFactory</span></span><a class="headerlink" href="#tilematch_tools.core.game_factory.GameFactory" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Responsible for creating a game ready to run.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.core.game_factory.GameFactory.create_game">
+<em class="property"><span class="pre">abstract</span><span class="w">  </span><span class="pre">static</span><span class="w">  </span></em><span class="sig-name descname"><span class="pre">create_game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="index.html#tilematch_tools.core.game_factory.Game" title="tilematch_tools.core.game_factory.Game"><span class="pre">Game</span></a></span></span><a class="headerlink" href="#tilematch_tools.core.game_factory.GameFactory.create_game" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a packaged game that’s ready to execute
+Returns:</p>
+<blockquote>
+<div><p>Game:  Initialized game that’s ready to execute</p>
+</div></blockquote>
 </dd></dl>
 
 </dd></dl>
@@ -184,41 +226,22 @@ Runs on main thread</p>
 </dd>
 </dl>
 <dl class="py class">
-<dt class="sig sig-object py" id="tilematch_tools.core.game_loop.FPSDelay">
-<em class="property"><span class="pre">class</span><span class="w">  </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.core.game_loop.</span></span><span class="sig-name descname"><span class="pre">FPSDelay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.core.game_loop.FPSDelay" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IntEnum</span></code></p>
-<p>Enumeration of delays used of achieve a target FPS in nanoseconds</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="tilematch_tools.core.game_loop.FPSDelay.FPS120">
-<span class="sig-name descname"><span class="pre">FPS120</span></span><em class="property"><span class="w">  </span><span class="p"><span class="pre">=</span></span><span class="w">  </span><span class="pre">8333333</span></em><a class="headerlink" href="#tilematch_tools.core.game_loop.FPSDelay.FPS120" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="tilematch_tools.core.game_loop.FPSDelay.FPS15">
-<span class="sig-name descname"><span class="pre">FPS15</span></span><em class="property"><span class="w">  </span><span class="p"><span class="pre">=</span></span><span class="w">  </span><span class="pre">66666666</span></em><a class="headerlink" href="#tilematch_tools.core.game_loop.FPSDelay.FPS15" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="tilematch_tools.core.game_loop.FPSDelay.FPS30">
-<span class="sig-name descname"><span class="pre">FPS30</span></span><em class="property"><span class="w">  </span><span class="p"><span class="pre">=</span></span><span class="w">  </span><span class="pre">33333333</span></em><a class="headerlink" href="#tilematch_tools.core.game_loop.FPSDelay.FPS30" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="tilematch_tools.core.game_loop.FPSDelay.FPS60">
-<span class="sig-name descname"><span class="pre">FPS60</span></span><em class="property"><span class="w">  </span><span class="p"><span class="pre">=</span></span><span class="w">  </span><span class="pre">16666666</span></em><a class="headerlink" href="#tilematch_tools.core.game_loop.FPSDelay.FPS60" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="tilematch_tools.core.game_loop.GameLoop">
-<em class="property"><span class="pre">class</span><span class="w">  </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.core.game_loop.</span></span><span class="sig-name descname"><span class="pre">GameLoop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><a class="reference internal" href="index.html#tilematch_tools.core.game_state.GameState" title="tilematch_tools.core.game_state.GameState"><span class="pre">GameState</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><a class="reference internal" href="index.html#tilematch_tools.view.game_view.GameView" title="tilematch_tools.view.game_view.GameView"><span class="pre">GameView</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><a class="reference internal" href="index.html#tilematch_tools.core.game_loop.FPSDelay" title="tilematch_tools.core.game_loop.FPSDelay"><span class="pre">FPSDelay</span></a></span><span class="w">  </span><span class="o"><span class="pre">=</span></span><span class="w">  </span><span class="default_value"><span class="pre">FPSDelay.FPS30</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.core.game_loop.GameLoop" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w">  </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.core.game_loop.</span></span><span class="sig-name descname"><span class="pre">GameLoop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><a class="reference internal" href="index.html#tilematch_tools.core.game_state.GameState" title="tilematch_tools.core.game_state.GameState"><span class="pre">GameState</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><a class="reference internal" href="index.html#tilematch_tools.view.game_view.GameView" title="tilematch_tools.view.game_view.GameView"><span class="pre">GameView</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">int</span></span><span class="w">  </span><span class="o"><span class="pre">=</span></span><span class="w">  </span><span class="default_value"><span class="pre">1000000000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.core.game_loop.GameLoop" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
 <p>A class that template a game loop</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="tilematch_tools.core.game_loop.GameLoop.await_delay">
-<span class="sig-name descname"><span class="pre">await_delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.core.game_loop.GameLoop.await_delay" title="Permalink to this definition"></a></dt>
-<dd><p>Await the delay necessary to achieve a target FPS
+<dt class="sig sig-object py" id="tilematch_tools.core.game_loop.GameLoop.can_advance">
+<span class="sig-name descname"><span class="pre">can_advance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#tilematch_tools.core.game_loop.GameLoop.can_advance" title="Permalink to this definition"></a></dt>
+<dd><p>Guard the loop from excessive calls
+:returns: true if the loop can advance, false otherwise
+:rtype: None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.core.game_loop.GameLoop.clean_up_state">
+<em class="property"><span class="pre">abstract</span><span class="w">  </span></em><span class="sig-name descname"><span class="pre">clean_up_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.core.game_loop.GameLoop.clean_up_state" title="Permalink to this definition"></a></dt>
+<dd><p>Clean up the game state after match discovery and removal
 :returns: nothing
 :rtype: None</p>
 </dd></dl>
@@ -243,22 +266,6 @@ Runs on main thread</p>
 :rtype: list</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="tilematch_tools.core.game_loop.GameLoop.gameover">
-<em class="property"><span class="pre">abstract</span><span class="w">  </span></em><span class="sig-name descname"><span class="pre">gameover</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#tilematch_tools.core.game_loop.GameLoop.gameover" title="Permalink to this definition"></a></dt>
-<dd><p>Check if the game has ended
-:returns: true if game over, false otherwise
-:rtype: bool</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="tilematch_tools.core.game_loop.GameLoop.handle_input">
-<em class="property"><span class="pre">abstract</span><span class="w">  </span></em><span class="sig-name descname"><span class="pre">handle_input</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#tilematch_tools.core.game_loop.GameLoop.handle_input" title="Permalink to this definition"></a></dt>
-<dd><p>Handle the next input available
-:returns: nothing
-:rtype: None</p>
-</dd></dl>
-
 <dl class="py property">
 <dt class="sig sig-object py" id="tilematch_tools.core.game_loop.GameLoop.state">
 <em class="property"><span class="pre">property</span><span class="w">  </span></em><span class="sig-name descname"><span class="pre">state</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w">  </span><a class="reference internal" href="index.html#tilematch_tools.core.game_state.GameState" title="tilematch_tools.core.game_state.GameState"><span class="pre">GameState</span></a></em><a class="headerlink" href="#tilematch_tools.core.game_loop.GameLoop.state" title="Permalink to this definition"></a></dt>
@@ -268,9 +275,9 @@ Runs on main thread</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tilematch_tools.core.game_loop.GameLoop.update_view">
-<em class="property"><span class="pre">abstract</span><span class="w">  </span></em><span class="sig-name descname"><span class="pre">update_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#tilematch_tools.core.game_loop.GameLoop.update_view" title="Permalink to this definition"></a></dt>
-<dd><p>Update the view of the game
+<dt class="sig sig-object py" id="tilematch_tools.core.game_loop.GameLoop.tick">
+<em class="property"><span class="pre">abstract</span><span class="w">  </span></em><span class="sig-name descname"><span class="pre">tick</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#tilematch_tools.core.game_loop.GameLoop.tick" title="Permalink to this definition"></a></dt>
+<dd><p>Execute any logic necessary to idly advance the game state
 :returns: nothing
 :rtype: None</p>
 </dd></dl>
@@ -358,6 +365,14 @@ match_condition (MatchCondition): the match condition to satisfy</p>
 <dt>Returns:</dt><dd><p>An object decribing the match if one exists, None otherwise</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.core.game_state.GameState.gameover">
+<span class="sig-name descname"><span class="pre">gameover</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#tilematch_tools.core.game_state.GameState.gameover" title="Permalink to this definition"></a></dt>
+<dd><p>Check if the game has ended
+:returns: true if game over, false otherwise
+:rtype: bool</p>
 </dd></dl>
 
 <dl class="py property">
@@ -1198,6 +1213,12 @@ Then calls the callback if one exists
 <dd><p>A place to organize internal widgets into self</p>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoardView.showing">
+<em class="property"><span class="pre">property</span><span class="w">  </span></em><span class="sig-name descname"><span class="pre">showing</span></span><a class="headerlink" href="#tilematch_tools.view.board_view.BoardView.showing" title="Permalink to this definition"></a></dt>
+<dd><p>A getter for the value ths widget is currently displaying</p>
+</dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tilematch_tools.view.board_view.BoardView.tile_side_length">
 <span class="sig-name descname"><span class="pre">tile_side_length</span></span><em class="property"><span class="w">  </span><span class="p"><span class="pre">=</span></span><span class="w">  </span><span class="pre">30</span></em><a class="headerlink" href="#tilematch_tools.view.board_view.BoardView.tile_side_length" title="Permalink to this definition"></a></dt>
@@ -1249,6 +1270,91 @@ Then calls the callback if one exists
 </dd></dl>
 
 </section>
+<section id="module-tilematch_tools.view.game_event">
+<span id="tilematch-tools-view-game-event-module"></span><h5>tilematch_tools.view.game_event module<a class="headerlink" href="#module-tilematch_tools.view.game_event" title="Permalink to this heading"></a></h5>
+<dl class="field-list simple">
+<dt class="field-odd">module_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>game_event</p>
+</dd>
+<dt class="field-even">module_summary<span class="colon">:</span></dt>
+<dd class="field-even"><p>interface for tilmatching game events</p>
+</dd>
+<dt class="field-odd">module_author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nathan Mendoza (<a class="reference external" href="mailto:nathancm&#37;&#52;&#48;uci&#46;edu">nathancm<span>&#64;</span>uci<span>&#46;</span>edu</a>)</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_event.GameEvent">
+<em class="property"><span class="pre">class</span><span class="w">  </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.view.game_event.</span></span><span class="sig-name descname"><span class="pre">GameEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">listener</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><a class="reference internal" href="index.html#tilematch_tools.core.game_state.GameState" title="tilematch_tools.core.game_state.GameState"><span class="pre">GameState</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.view.game_event.GameEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class represent an abstract game event</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_event.GameEvent.listener">
+<em class="property"><span class="pre">property</span><span class="w">  </span></em><span class="sig-name descname"><span class="pre">listener</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w">  </span><a class="reference internal" href="index.html#tilematch_tools.core.game_state.GameState" title="tilematch_tools.core.game_state.GameState"><span class="pre">GameState</span></a></em><a class="headerlink" href="#tilematch_tools.view.game_event.GameEvent.listener" title="Permalink to this definition"></a></dt>
+<dd><p>Reference to the object that knows how to respond to this event
+:returns: object awaiting this event
+:rtype: GameState</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_event.MouseEvent">
+<em class="property"><span class="pre">class</span><span class="w">  </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.view.game_event.</span></span><span class="sig-name descname"><span class="pre">MouseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">listener</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><a class="reference internal" href="index.html#tilematch_tools.core.game_state.GameState" title="tilematch_tools.core.game_state.GameState"><span class="pre">GameState</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">board_clicked_on</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><a class="reference internal" href="index.html#tilematch_tools.view.board_view.BoardView" title="tilematch_tools.view.board_view.BoardView"><span class="pre">BoardView</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.view.game_event.MouseEvent" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tilematch_tools.view.game_event.GameEvent" title="tilematch_tools.view.game_event.GameEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">GameEvent</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-tilematch_tools.view.game_title">
+<span id="tilematch-tools-view-game-title-module"></span><h5>tilematch_tools.view.game_title module<a class="headerlink" href="#module-tilematch_tools.view.game_title" title="Permalink to this heading"></a></h5>
+<dl class="field-list simple">
+<dt class="field-odd">module_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>game_title</p>
+</dd>
+<dt class="field-even">module_summary<span class="colon">:</span></dt>
+<dd class="field-even"><p>a GUI widget for displaying a game’s title</p>
+</dd>
+<dt class="field-odd">module_author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nathan Mendoza (<a class="reference external" href="mailto:nathancm&#37;&#52;&#48;uci&#46;edu">nathancm<span>&#64;</span>uci<span>&#46;</span>edu</a>)</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_title.GameTitle">
+<em class="property"><span class="pre">class</span><span class="w">  </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.view.game_title.</span></span><span class="sig-name descname"><span class="pre">GameTitle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_title</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.view.game_title.GameTitle" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tilematch_tools.view.game_widgets.GameInfo" title="tilematch_tools.view.game_widgets.GameInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">GameInfo</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_title.GameTitle.create_widgets">
+<span class="sig-name descname"><span class="pre">create_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.view.game_title.GameTitle.create_widgets" title="Permalink to this definition"></a></dt>
+<dd><p>A place to initialize any necessary internal widgets</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_title.GameTitle.font">
+<em class="property"><span class="pre">property</span><span class="w">  </span></em><span class="sig-name descname"><span class="pre">font</span></span><a class="headerlink" href="#tilematch_tools.view.game_title.GameTitle.font" title="Permalink to this definition"></a></dt>
+<dd><p>Font to use in display</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_title.GameTitle.place_widgets">
+<span class="sig-name descname"><span class="pre">place_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.view.game_title.GameTitle.place_widgets" title="Permalink to this definition"></a></dt>
+<dd><p>A place to organize internal widgets into self</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_title.GameTitle.showing">
+<em class="property"><span class="pre">property</span><span class="w">  </span></em><span class="sig-name descname"><span class="pre">showing</span></span><a class="headerlink" href="#tilematch_tools.view.game_title.GameTitle.showing" title="Permalink to this definition"></a></dt>
+<dd><p>A getter for the value ths widget is currently displaying</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_title.GameTitle.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.view.game_title.GameTitle.update" title="Permalink to this definition"></a></dt>
+<dd><p>Describes how the widget should update itself</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 <section id="module-tilematch_tools.view.game_view">
 <span id="tilematch-tools-view-game-view-module"></span><h5>tilematch_tools.view.game_view module<a class="headerlink" href="#module-tilematch_tools.view.game_view" title="Permalink to this heading"></a></h5>
 <dl class="field-list simple">
@@ -1264,9 +1370,24 @@ Then calls the callback if one exists
 </dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="tilematch_tools.view.game_view.GameView">
-<em class="property"><span class="pre">class</span><span class="w">  </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.view.game_view.</span></span><span class="sig-name descname"><span class="pre">GameView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_to_watch</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><a class="reference internal" href="index.html#tilematch_tools.core.game_state.GameState" title="tilematch_tools.core.game_state.GameState"><span class="pre">GameState</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.view.game_view.GameView" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w">  </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.view.game_view.</span></span><span class="sig-name descname"><span class="pre">GameView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_to_watch</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><a class="reference internal" href="index.html#tilematch_tools.core.game_state.GameState" title="tilematch_tools.core.game_state.GameState"><span class="pre">GameState</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.view.game_view.GameView" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tilematch_tools.view.game_widgets.GameWidget" title="tilematch_tools.view.game_widgets.GameWidget"><code class="xref py py-class docutils literal notranslate"><span class="pre">GameWidget</span></code></a></p>
 <p>GUI widget for displaying a game’s widgets</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_view.GameView.bind_click">
+<span class="sig-name descname"><span class="pre">bind_click</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mouse_button</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><a class="reference internal" href="index.html#tilematch_tools.view.game_event.GameEvent" title="tilematch_tools.view.game_event.GameEvent"><span class="pre">GameEvent</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#tilematch_tools.view.game_view.GameView.bind_click" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_view.GameView.bind_key">
+<span class="sig-name descname"><span class="pre">bind_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_sequence</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span><span class="w">  </span><span class="n"><a class="reference internal" href="index.html#tilematch_tools.view.game_event.GameEvent" title="tilematch_tools.view.game_event.GameEvent"><span class="pre">GameEvent</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#tilematch_tools.view.game_view.GameView.bind_key" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_view.GameView.board_view">
+<em class="property"><span class="pre">property</span><span class="w">  </span></em><span class="sig-name descname"><span class="pre">board_view</span></span><a class="headerlink" href="#tilematch_tools.view.game_view.GameView.board_view" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="tilematch_tools.view.game_view.GameView.create_widgets">
 <span class="sig-name descname"><span class="pre">create_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.view.game_view.GameView.create_widgets" title="Permalink to this definition"></a></dt>
@@ -1278,6 +1399,11 @@ Then calls the callback if one exists
 <span class="sig-name descname"><span class="pre">place_widgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tilematch_tools.view.game_view.GameView.place_widgets" title="Permalink to this definition"></a></dt>
 <dd><p>A place to organize internal widgets into self</p>
 </dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.view.game_view.GameView.score_view">
+<em class="property"><span class="pre">property</span><span class="w">  </span></em><span class="sig-name descname"><span class="pre">score_view</span></span><a class="headerlink" href="#tilematch_tools.view.game_view.GameView.score_view" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="tilematch_tools.view.game_view.GameView.update">
@@ -1416,7 +1542,7 @@ Then calls the callback if one exists
 <dd class="field-even"><p>a module responsible for the view of the tile game</p>
 </dd>
 <dt class="field-odd">module_author<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Matthew Isayan</p>
+<dd class="field-odd"><p>Matthew Isayan, Nathan Mendoza</p>
 </dd>
 </dl>
 </section>
