@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tilematch_tools.model.board.game_board &mdash; tilematch_tools 1.0 documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            tilematch_tools
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tilematch_tools.html">tilematch_tools package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">tilematch_tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">tilematch_tools.model.board.game_board</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for tilematch_tools.model.board.game_board</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :module_name: game_board</span>
+<span class="sd">    :module_summary: a classe that represents the board of a tile-matching game</span>
+<span class="sd">    :module_author: Nathan Mendoza (nathancm@uci.edu)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span>
+
+<span class="kn">from</span> <span class="nn">..tiles</span> <span class="kn">import</span> <span class="n">Tile</span><span class="p">,</span> <span class="n">NullTile</span>
+<span class="kn">from</span> <span class="nn">..exceptions</span> <span class="kn">import</span> <span class="n">InvalidBoardPositionError</span><span class="p">,</span> <span class="n">IllegalBoardContentException</span>
+
+<span class="n">LOGGER</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GameBoard"><a class="viewcode-back" href="../../../../tilematch_tools.model.board.html#tilematch_tools.model.board.game_board.GameBoard">[docs]</a><span class="k">class</span> <span class="nc">GameBoard</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_num_rows</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_num_cols</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__init_board</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">board</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_board</span>
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">num_rows</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_rows</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">num_cols</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_cols</span>
+
+    <span class="k">def</span> <span class="nf">__init_board</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            initialize the game board full of default tiles</span>
+<span class="sd">            :returns: nothing</span>
+<span class="sd">            :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_board</span> <span class="o">=</span> <span class="p">[</span> <span class="c1"># positions will be represented as positve cartesian coordinates</span>
+                <span class="p">[</span> <span class="n">NullTile</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;position&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;#D3D3D3&#39;</span><span class="p">})</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_rows</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_cols</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="p">]</span>
+
+<div class="viewcode-block" id="GameBoard.tile_at"><a class="viewcode-back" href="../../../../tilematch_tools.model.board.html#tilematch_tools.model.board.game_board.GameBoard.tile_at">[docs]</a>    <span class="k">def</span> <span class="nf">tile_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tile</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">           return a reference to the tile at the specified location on the game board</span>
+<span class="sd">           :arg x: the x value of the coordinate to obtain the tile from</span>
+<span class="sd">           :arg y: the y value of the coordinate to obtain the tile from</span>
+<span class="sd">           :returns: a reference to the specified tile</span>
+<span class="sd">           :rtype: Tile</span>
+<span class="sd">           :throws: InvalidBoardPositionError if the specified position is invalid</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Looking at tile located at (</span><span class="si">%d</span><span class="s1">, </span><span class="si">%d</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__board_position_is_valid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+            <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">%d</span><span class="s1">, </span><span class="si">%d</span><span class="s1">) is out of bounds&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">InvalidBoardPositionError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The position (</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">) is invalid for the given board&quot;</span>
+                    <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_board</span><span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># Adjust from cartesian coordinates to valid indices</span></div>
+
+<div class="viewcode-block" id="GameBoard.place_tile"><a class="viewcode-back" href="../../../../tilematch_tools.model.board.html#tilematch_tools.model.board.game_board.GameBoard.place_tile">[docs]</a>    <span class="k">def</span> <span class="nf">place_tile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile</span><span class="p">:</span> <span class="n">Tile</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            place the given tile at its declared position</span>
+<span class="sd">            :arg tile: tile to place</span>
+<span class="sd">            :arg type: Tile</span>
+<span class="sd">            :returns: nothing</span>
+<span class="sd">            :rtype: None</span>
+<span class="sd">            :throws InvalidBoardPositionError if the specified position is invalid</span>
+<span class="sd">            :throws IllegalBoardContentException if the given tile is not a Tile</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tile</span><span class="p">,</span> <span class="n">Tile</span><span class="p">):</span>
+            <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Attempted to place a non-tile type on the board&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">IllegalBoardContentException</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;tile must be of type Tile, not </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">tile</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">tile</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">x</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">tile</span><span class="o">.</span><span class="n">position</span><span class="o">.</span><span class="n">y</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__board_position_is_valid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+            <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">%d</span><span class="s1">, </span><span class="si">%d</span><span class="s1">) is out of bounds&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">InvalidBoardPositionError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;The position (</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">) is invalid for the given board&quot;</span>
+                    <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">tile</span><span class="p">)</span> <span class="o">==</span> <span class="n">NullTile</span><span class="p">:</span>
+            <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Placing a null tile at (</span><span class="si">%d</span><span class="s1">, </span><span class="si">%d</span><span class="s1">) -- skipping availablity checks&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_board</span><span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">tile</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__board_position_is_available</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+            <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">%d</span><span class="s1">, </span><span class="si">%d</span><span class="s1">) is already occupied by another tile&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">InvalidBoardPositionError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;The position (</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">) is already occupied by another tile&quot;</span>
+                    <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_board</span><span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">tile</span></div>
+            
+
+    <span class="k">def</span> <span class="nf">__board_position_is_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Returns true if the given (x, y) ordered pair is valid on this board. False otherwise</span>
+<span class="sd">            :arg x: the x value of the coordinate</span>
+<span class="sd">            :arg y: the y value of the coordinate</span>
+<span class="sd">            :arg type: int</span>
+<span class="sd">            :arg type: int</span>
+<span class="sd">            :returns: true for valid coordiantes, false for invalide coordinates</span>
+<span class="sd">            :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_cols</span> <span class="ow">and</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_rows</span>
+
+    <span class="k">def</span> <span class="nf">__board_position_is_available</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Return true if the given (x, y) ordered pair has no tile in it. False otherwise</span>
+<span class="sd">            :arg x: the x value of the coordinate</span>
+<span class="sd">            :arg y: the y value of the coordinate</span>
+<span class="sd">            :arg type: int</span>
+<span class="sd">            :arg type: int</span>
+<span class="sd">            :returns: true for availability, false for unavailability</span>
+<span class="sd">            :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__board_position_is_valid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_board</span><span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="n">NullTile</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Return a generator that iterate over the board in column-major order</span>
+<span class="sd">            :rtype: generator</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_cols</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_rows</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">tile_at</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, INF 122 Winter 2023 Group 15.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

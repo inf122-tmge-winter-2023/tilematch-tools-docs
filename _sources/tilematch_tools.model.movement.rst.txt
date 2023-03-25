@@ -1,0 +1,10 @@
+tilematch\_tools.model.movement package
+=======================================
+
+Module contents
+---------------
+
+.. automodule:: tilematch_tools.model.movement
+   :members:
+   :undoc-members:
+   :show-inheritance:

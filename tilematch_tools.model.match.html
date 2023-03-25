@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tilematch_tools.model.match package &mdash; tilematch_tools 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tilematch_tools.model.movement package" href="tilematch_tools.model.movement.html" />
+    <link rel="prev" title="tilematch_tools.model.board package" href="tilematch_tools.model.board.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            tilematch_tools
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="tilematch_tools.html">tilematch_tools package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tilematch_tools.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tilematch_tools.core.html">tilematch_tools.core package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="tilematch_tools.model.html">tilematch_tools.model package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="tilematch_tools.model.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tilematch_tools.model.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tilematch_tools.model.html#module-tilematch_tools.model.exceptions">tilematch_tools.model.exceptions module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tilematch_tools.model.html#module-tilematch_tools.model">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tilematch_tools.view.html">tilematch_tools.view package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tilematch_tools.html#module-tilematch_tools">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">tilematch_tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="tilematch_tools.html">tilematch_tools package</a></li>
+          <li class="breadcrumb-item"><a href="tilematch_tools.model.html">tilematch_tools.model package</a></li>
+      <li class="breadcrumb-item active">tilematch_tools.model.match package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tilematch_tools.model.match.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tilematch-tools-model-match-package">
+<h1>tilematch_tools.model.match package<a class="headerlink" href="#tilematch-tools-model-match-package" title="Permalink to this heading"></a></h1>
+<section id="module-tilematch_tools.model.match">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tilematch_tools.model.match" title="Permalink to this heading"></a></h2>
+<dl class="field-list simple">
+<dt class="field-odd">module_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>match</p>
+</dd>
+<dt class="field-even">module_summary<span class="colon">:</span></dt>
+<dd class="field-even"><p>class that controlls the match rules of a tile-matching game</p>
+</dd>
+<dt class="field-odd">module_author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nathan Mendoza (<a class="reference external" href="mailto:nathancm&#37;&#52;&#48;uci&#46;edu">nathancm<span>&#64;</span>uci<span>&#46;</span>edu</a>)</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.MatchCondition">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.model.match.</span></span><span class="sig-name descname"><span class="pre">MatchCondition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scan:</span> <span class="pre">~tilematch_tools.model.match.ScanDelta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">equality_rule:</span> <span class="pre">callable</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">Tile.__eq__&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/model/match.html#MatchCondition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.model.match.MatchCondition" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Class that specifies the interface for match rules
+:scan: the 2-unit vector direction to scan a match for
+:equality_rule: the function the determines if two tiles match</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.MatchCondition.MatchFound">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MatchFound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value:</span> <span class="pre">int,</span> <span class="pre">matching_tiles:</span> <span class="pre">[&lt;class</span> <span class="pre">'tilematch_tools.model.tiles.tile.Tile'&gt;]</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/model/match.html#MatchCondition.MatchFound"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.model.match.MatchCondition.MatchFound" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class representing a discovered match and its point value</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.MatchCondition.MatchFound.matching_tiles">
+<span class="sig-name descname"><span class="pre">matching_tiles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">[&lt;class</span> <span class="pre">'tilematch_tools.model.tiles.tile.Tile'&gt;]</span></em><a class="headerlink" href="#tilematch_tools.model.match.MatchCondition.MatchFound.matching_tiles" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.MatchCondition.MatchFound.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#tilematch_tools.model.match.MatchCondition.MatchFound.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.MatchCondition.check_match">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">board</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="tilematch_tools.model.board.html#tilematch_tools.model.board.game_board.GameBoard" title="tilematch_tools.model.board.game_board.GameBoard"><span class="pre">GameBoard</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#tilematch_tools.model.match.MatchCondition.MatchFound" title="tilematch_tools.model.match.MatchCondition.MatchFound"><span class="pre">MatchFound</span></a></span></span><a class="reference internal" href="_modules/tilematch_tools/model/match.html#MatchCondition.check_match"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.model.match.MatchCondition.check_match" title="Permalink to this definition"></a></dt>
+<dd><p>Check for a match on the given board starting at the specified position
+:arg board: the board to check a match for
+:arg start_x: the x position the match scan starts at
+:arg start_y: the y position the match scan starts at
+:arg type: GameBoard
+:arg type: int
+:arg type: int
+:returns: A object describing the match if one was found, None otherwise
+:rtype: MatchFound or None</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.MatchCondition.point_value">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">point_value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#tilematch_tools.model.match.MatchCondition.point_value" title="Permalink to this definition"></a></dt>
+<dd><p>Read only view of the point value of this match condition
+:returns: match condition’s point value
+:rtype: int</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.ScanDelta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tilematch_tools.model.match.</span></span><span class="sig-name descname"><span class="pre">ScanDelta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tilematch_tools/model/match.html#ScanDelta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tilematch_tools.model.match.ScanDelta" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>Enumeration representing the 8 directional unit vectors on a 2d-plan</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.ScanDelta.DOWN">
+<span class="sig-name descname"><span class="pre">DOWN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(0,</span> <span class="pre">-1)</span></em><a class="headerlink" href="#tilematch_tools.model.match.ScanDelta.DOWN" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.ScanDelta.DOWNANDLEFT">
+<span class="sig-name descname"><span class="pre">DOWNANDLEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(-1,</span> <span class="pre">-1)</span></em><a class="headerlink" href="#tilematch_tools.model.match.ScanDelta.DOWNANDLEFT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.ScanDelta.DOWNANDRIGHT">
+<span class="sig-name descname"><span class="pre">DOWNANDRIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(1,</span> <span class="pre">-1)</span></em><a class="headerlink" href="#tilematch_tools.model.match.ScanDelta.DOWNANDRIGHT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.ScanDelta.LEFT">
+<span class="sig-name descname"><span class="pre">LEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(-1,</span> <span class="pre">0)</span></em><a class="headerlink" href="#tilematch_tools.model.match.ScanDelta.LEFT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.ScanDelta.RIGHT">
+<span class="sig-name descname"><span class="pre">RIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(1,</span> <span class="pre">0)</span></em><a class="headerlink" href="#tilematch_tools.model.match.ScanDelta.RIGHT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.ScanDelta.UP">
+<span class="sig-name descname"><span class="pre">UP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(0,</span> <span class="pre">1)</span></em><a class="headerlink" href="#tilematch_tools.model.match.ScanDelta.UP" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.ScanDelta.UPANDLEFT">
+<span class="sig-name descname"><span class="pre">UPANDLEFT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(-1,</span> <span class="pre">1)</span></em><a class="headerlink" href="#tilematch_tools.model.match.ScanDelta.UPANDLEFT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tilematch_tools.model.match.ScanDelta.UPANDRIGHT">
+<span class="sig-name descname"><span class="pre">UPANDRIGHT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(1,</span> <span class="pre">1)</span></em><a class="headerlink" href="#tilematch_tools.model.match.ScanDelta.UPANDRIGHT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tilematch_tools.model.board.html" class="btn btn-neutral float-left" title="tilematch_tools.model.board package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tilematch_tools.model.movement.html" class="btn btn-neutral float-right" title="tilematch_tools.model.movement package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, INF 122 Winter 2023 Group 15.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

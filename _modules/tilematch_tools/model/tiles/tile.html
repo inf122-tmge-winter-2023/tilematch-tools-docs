@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tilematch_tools.model.tiles.tile &mdash; tilematch_tools 1.0 documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            tilematch_tools
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tilematch_tools.html">tilematch_tools package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">tilematch_tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">tilematch_tools.model.tiles.tile</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for tilematch_tools.model.tiles.tile</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :module_name: tile</span>
+<span class="sd">    :module_summary: a class that represents the base tile</span>
+<span class="sd">    :module_author: Matthew Isayan, Nathan Mendoza</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="kn">from</span> <span class="nn">.tile_appearance</span> <span class="kn">import</span> <span class="n">TileAppearance</span><span class="p">,</span> <span class="n">TileShape</span><span class="p">,</span> <span class="n">TileColor</span>
+<span class="kn">from</span> <span class="nn">..exceptions</span> <span class="kn">import</span> <span class="n">MissingTilePropertyException</span>
+
+<span class="n">LOGGER</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Position"><a class="viewcode-back" href="../../../../tilematch_tools.model.tiles.html#tilematch_tools.model.tiles.tile.Position">[docs]</a><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Position</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A class that represents a position on a 2d plane</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span></div>
+
+<div class="viewcode-block" id="Tile"><a class="viewcode-back" href="../../../../tilematch_tools.model.tiles.html#tilematch_tools.model.tiles.tile.Tile">[docs]</a><span class="k">class</span> <span class="nc">Tile</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A class the represents a tile in a tile-matching game</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">properties</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">properties</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;position&#39;</span><span class="p">):</span>
+            <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;All tiles require a position property&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">MissingTilePropertyException</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2"> requires a `position` property but was not present&quot;</span>
+                    <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_position</span> <span class="o">=</span> <span class="n">Position</span><span class="p">(</span><span class="o">*</span><span class="n">properties</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;position&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_appearance</span> <span class="o">=</span> <span class="n">TileAppearance</span><span class="p">(</span>
+                    <span class="n">properties</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">TileColor</span><span class="o">.</span><span class="n">RED</span><span class="p">),</span>
+                    <span class="n">properties</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">,</span> <span class="n">TileShape</span><span class="o">.</span><span class="n">SQUARE</span><span class="p">),</span>
+                    <span class="n">properties</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;border&#39;</span><span class="p">,</span> <span class="n">TileColor</span><span class="o">.</span><span class="n">GRAY</span><span class="p">)</span>
+                <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_movable</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Deprecated</span>
+<span class="sd">    def move(self, rule: MovementRule):</span>
+<span class="sd">            Apply the given movement rule to this tile</span>
+<span class="sd">            :arg rule: the rule specifying how to modify position</span>
+<span class="sd">            :arg type: Movement rule</span>
+<span class="sd">            :returns: nothing</span>
+<span class="sd">            :rtype: None</span>
+<span class="sd">        if not self.mobile:</span>
+<span class="sd">            LOGGER.error(&#39;Attempted to move an immovable tile&#39;)</span>
+<span class="sd">            raise IllegalTileMovementException(&quot;Can&#39;t apply a movement to an inmovable tile&quot;)</span>
+<span class="sd">        self.position = rule.exec(</span>
+<span class="sd">                self.position.x,</span>
+<span class="sd">                self.position.y</span>
+<span class="sd">                )</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Allows for checking tile equality with ==&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Other is not an instance of tile, assuming unequal&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">color</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">position</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Position</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Return the position of this tile</span>
+<span class="sd">            :returns: an snapshot of the tile&#39;s current position</span>
+<span class="sd">            :rtype: Position</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Requested read of position is: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_position</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_position</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">mobile</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Returns whether a tile can move</span>
+<span class="sd">            :returns: tile mobility</span>
+<span class="sd">            :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Requested read of mobility is: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_movable</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_movable</span>
+
+    <span class="nd">@position</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_pos</span><span class="p">:</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Update the position of this tile</span>
+<span class="sd">            :arg new_pos: a 2-tuple representing the new position coordinate</span>
+<span class="sd">            :arg type: tuple</span>
+<span class="sd">            :returns: nothing</span>
+<span class="sd">            :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Updating position: (</span><span class="si">%d</span><span class="s1">, </span><span class="si">%d</span><span class="s1">) -&gt; (</span><span class="si">%d</span><span class="s1">, </span><span class="si">%d</span><span class="s1">)&#39;</span><span class="p">,</span>
+                     <span class="bp">self</span><span class="o">.</span><span class="n">_position</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+                     <span class="bp">self</span><span class="o">.</span><span class="n">_position</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+                     <span class="n">new_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                     <span class="n">new_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                     <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_position</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">new_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_position</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">new_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Requested read of tile color is: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_appearance</span><span class="o">.</span><span class="n">color</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_appearance</span><span class="o">.</span><span class="n">color</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Requested read of tile shape is: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_appearance</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_appearance</span><span class="o">.</span><span class="n">shape</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">border</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Requested read of tile border is: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_appearance</span><span class="o">.</span><span class="n">border</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_appearance</span><span class="o">.</span><span class="n">border</span>
+    
+    <span class="nd">@border</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">border</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="n">TileColor</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sets the border color</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            color (TileColor): border color to set to</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Requested read of tile border is: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_appearance</span><span class="o">.</span><span class="n">border</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_appearance</span><span class="o">.</span><span class="n">border</span> <span class="o">=</span> <span class="n">color</span></div>
+
+
+<div class="viewcode-block" id="NullTile"><a class="viewcode-back" href="../../../../tilematch_tools.model.tiles.html#tilematch_tools.model.tiles.tile.NullTile">[docs]</a><span class="k">class</span> <span class="nc">NullTile</span><span class="p">(</span><span class="n">Tile</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A class that represents the absence of a tile</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">properties</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">properties</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_movable</span> <span class="o">=</span> <span class="kc">False</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, INF 122 Winter 2023 Group 15.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+tilematch\_tools package
+========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   tilematch_tools.core
+   tilematch_tools.model
+   tilematch_tools.view
+
+Module contents
+---------------
+
+.. automodule:: tilematch_tools
+   :members:
+   :undoc-members:
+   :show-inheritance:
